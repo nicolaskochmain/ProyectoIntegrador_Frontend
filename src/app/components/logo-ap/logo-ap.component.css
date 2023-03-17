@@ -1,0 +1,23 @@
+.row {
+  width: 100%;
+}
+
+img {
+  width: 50px;
+}
+
+#logoAP {
+  width: 150px;
+}
+
+.redes {
+  margin-right: 0.5em;
+}
+
+.redes img {
+  margin: 0.2em;
+}
+
+.btn {
+  border-width: medium;
+}
