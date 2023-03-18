@@ -1,29 +1,26 @@
 <div class="row">
   <h1>Hard & Soft Skills</h1>
-  <div class="text-center col-sm-4 colmd-4 col-lg-4">
-    <circle-progress
-      [percent]="90"
-      [radius]="100"
-      [imageSrc]="'../assets/html.png'"
-      [showImage]="true"
-      [imageHeight]="80"
-      [imageWidth]="80"
-      [showUnits]="false"
-      [showSubtitle]="false"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="8"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="300"
-    ></circle-progress>
+  <div class="col-lg-2">
+    <button
+      type="button"
+      routerLink="/nuevahys"
+      class="btn btn-dark"
+      *ngIf="isLogged"
+    >
+      Nueva Skill
+    </button>
   </div>
-  <div class="text-center col-sm-4 colmd-4 col-lg-4">
+  <div
+    class="d-flex flex-column align-items-center text-center col-sm-4 colmd-4 col-lg-4"
+    *ngFor="let hys of hys"
+  >
     <circle-progress
-      [percent]="90"
+      [percent]="hys.porcentaje"
       [radius]="100"
-      [imageSrc]="'../assets/grupal.png'"
-      [showImage]="true"
+      [imageSrc]="''"
+      [title]="hys.nombre"
+      [showTitle]="true"
+      [showImage]="false"
       [imageHeight]="80"
       [imageWidth]="80"
       [showUnits]="false"
@@ -35,77 +32,17 @@
       [animation]="true"
       [animationDuration]="300"
     ></circle-progress>
-  </div>
-  <div class="text-center col-sm-4 colmd-4 col-lg-4">
-    <circle-progress
-      [percent]="90"
-      [radius]="100"
-      [imageSrc]="'../assets/CSS.png'"
-      [showImage]="true"
-      [imageHeight]="80"
-      [imageWidth]="80"
-      [showUnits]="false"
-      [showSubtitle]="false"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="8"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="300"
-    ></circle-progress>
-  </div>
-  <div class="text-center col-sm-4 colmd-4 col-lg-4">
-    <circle-progress
-      [percent]="90"
-      [radius]="100"
-      [imageSrc]="'../assets/js.png'"
-      [showImage]="true"
-      [imageHeight]="80"
-      [imageWidth]="80"
-      [showUnits]="false"
-      [showSubtitle]="false"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="8"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="300"
-    ></circle-progress>
-  </div>
-  <div class="text-center col-sm-4 colmd-4 col-lg-4">
-    <circle-progress
-      [percent]="90"
-      [radius]="100"
-      [imageSrc]="'../assets/git.png'"
-      [showImage]="true"
-      [imageHeight]="80"
-      [imageWidth]="80"
-      [showUnits]="false"
-      [showSubtitle]="false"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="8"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="300"
-    ></circle-progress>
-  </div>
-  <div class="text-center col-sm-4 colmd-4 col-lg-4">
-    <circle-progress
-      [percent]="90"
-      [radius]="100"
-      [imageSrc]="'../assets/eng.png'"
-      [showImage]="true"
-      [imageHeight]="80"
-      [imageWidth]="80"
-      [showUnits]="false"
-      [showSubtitle]="false"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="8"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
-      [animation]="true"
-      [animationDuration]="300"
-    ></circle-progress>
+    <div class="">
+      <button
+        class="btn btn-light"
+        routerLink="/edithys/{{ hys.id }}"
+        *ngIf="isLogged"
+      >
+        <i class="bi bi-pencil-fill"></i>
+      </button>
+      <button class="btn btn-danger" (click)="delete(hys.id)" *ngIf="isLogged">
+        <i class="bi bi-trash-fill"></i>
+      </button>
+    </div>
   </div>
 </div>
