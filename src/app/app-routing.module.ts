@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { EditHysComponent } from './components/skills/edit-hys.component';
 import { NewHysComponent } from './components/skills/new-hys.component';
+import { EditAcercaDeComponent } from './components/acerca-de/edit-acerca-de.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'editedu/:id', component: EditEducacionComponent },
   { path: 'nuevahys', component: NewHysComponent },
   { path: 'edithys/:id', component: EditHysComponent },
+  { path: 'editacercade/:id', component: EditAcercaDeComponent },
 ];
 
 @NgModule({
