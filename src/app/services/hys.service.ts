@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Hys } from '../model/hys';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HysService {
-  URL = 'https://backendap.herokuapp.com/hys/';
+  URL = `https://backendap.herokuapp.com/hys/`;
 
   constructor(private httpClient: HttpClient) {}
 
