@@ -19,6 +19,7 @@ export class EditAcercaDeComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.params['id'];
+    console.log(id);
     this.personaService.detail(id).subscribe(
       (data) => (this.persona = data),
       (err) => {
@@ -33,7 +34,7 @@ export class EditAcercaDeComponent implements OnInit {
     this.personaService.update(id, this.persona).subscribe(
       (data) => this.router.navigate(['']),
       (err) => {
-        alert('Error al modificar la educacion');
+        alert('Error al modificar la persona');
         this.router.navigate(['']);
       }
     );
