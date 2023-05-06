@@ -1,59 +1,106 @@
-<div class="container" *ngIf="persona">
-  <div class="row">
-    <div>
-      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input
-            type="text"
-            id="nombre"
-            class="form-control"
-            name="nombre"
-            [(ngModel)]="persona.nombre"
-            required
-          />
+<section class="gradient-custom">
+  <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <div class="container py-5 vh-100">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem">
+            <div class="card-body p-4 text-center">
+              <div class="mb-md-2 mt-md-4 pb-2">
+                <h2 class="fw-bold mb-1 text-uppercase">Editar persona</h2>
+                <p class="text-white-50 mb-4">
+                  Por favor completa todos los campos!
+                </p>
+                <div class="form-outline form-white row mb-4">
+                  <div class="col">
+                    <input
+                      type="text"
+                      id="nombre"
+                      class="form-control form-control-lg"
+                      name="nombre"
+                      [(ngModel)]="persona.nombre"
+                      required
+                    />
+                    <label class="form-label" for="nombre">Nombre</label>
+                  </div>
+                  <div class="col">
+                    <input
+                      type="text"
+                      id="apellido"
+                      class="form-control form-control-lg"
+                      name="apellido"
+                      [(ngModel)]="persona.apellido"
+                      required
+                    />
+                    <label class="form-label" for="apellido">Apellido</label>
+                  </div>
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                  <textarea
+                    name="descripcion"
+                    class="form-control form-control-lg"
+                    id="descripcion"
+                    cols="50"
+                    rows="6"
+                    name="descripcion"
+                    [(ngModel)]="persona.descripcion"
+                    required
+                  ></textarea>
+                  <label class="form-label" for="descripcion"
+                    >Descripcion (maximo 500 caracteres)
+                  </label>
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                  <input
+                    type="file"
+                    id="img"
+                    class="form-control form-control-lg"
+                    name="img"
+                    [(ngModel)]="persona.img"
+                    required
+                    (change)="uploadImage($event)"
+                    accept=".jpg, .jpeg, .png"
+                  />
+                  <label class="form-label" for="img"
+                    >Foto de perfil (puede tardar unos segundos)
+                  </label>
+                </div>
+                <div class="imagen">
+                  <img [src]="imageService.url" width="200px" />
+                </div>
+                <div class="form-outline form-white mb-4">
+                  <input
+                    type="file"
+                    id="banner"
+                    class="form-control form-control-lg"
+                    name="banner"
+                    [(ngModel)]="persona.banner"
+                    required
+                    (change)="uploadBanner($event)"
+                    accept=".jpg, .jpeg, .png"
+                  />
+                  <label class="form-label" for="banner"
+                    >Foto de banner (puede tardar unos segundos)</label
+                  >
+                </div>
+                <div class="banner">
+                  <img [src]="bannerService.url" width="200px" />
+                </div>
+                <button class="btn btn-outline-light btn-lg px-5" type="submit">
+                  Editar persona
+                </button>
+              </div>
+              <div>
+                <p class="mb-0">
+                  Volver a
+                  <a routerLink="" class="text-white-50 fw-bold">Home</a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="nombre">Apellido</label>
-          <input
-            type="text"
-            id="apellido"
-            class="form-control"
-            name="apellido"
-            [(ngModel)]="persona.apellido"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="descripcion">Descripcion</label>
-          <input
-            type="text"
-            id="descripcion"
-            class="form-control"
-            name="descripcion"
-            [(ngModel)]="persona.descripcion"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="img">img</label>
-          <input
-            type="file"
-            id="img"
-            class="form-control"
-            name="img"
-            [(ngModel)]="persona.img"
-            required
-            (change)="uploadImage($event)"
-            accept=".jpg, .jpeg, .png"
-          />
-        </div>
-        <div class="imagen">
-          <img [src]="imageService.url" width="200px" />
-        </div>
-        <br />
-        <button class="btn btn-primary">Editar persona</button>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
+  </form>
+</section>

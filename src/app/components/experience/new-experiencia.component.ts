@@ -18,8 +18,8 @@ export class NewExperienciaComponent {
   ) {}
 
   onCreate(): void {
-    const expe = new Experiencia(this.nombreE, this.descripcionE);
-    this.sExperiencia.save(expe).subscribe(
+    const experiencia = new Experiencia(this.nombreE, this.descripcionE);
+    this.sExperiencia.save(experiencia).subscribe(
       (data) => {
         alert('Experiencia creada');
         this.router.navigate(['']);

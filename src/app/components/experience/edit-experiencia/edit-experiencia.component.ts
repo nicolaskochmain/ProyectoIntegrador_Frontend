@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./edit-experiencia.component.css'],
 })
 export class EditExperienciaComponent {
-  expLab!: Experiencia;
+  experiencia!: Experiencia;
 
   constructor(
     private sExperiencia: ExperienciaService,
@@ -21,7 +21,7 @@ export class EditExperienciaComponent {
     const id = this.activatedRoute.snapshot.params['id'];
     this.sExperiencia.detail(id).subscribe(
       (data) => {
-        this.expLab = data;
+        this.experiencia = data;
       },
       (err) => {
         alert('error al modificar experiencia');
@@ -32,7 +32,7 @@ export class EditExperienciaComponent {
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    this.sExperiencia.update(id, this.expLab).subscribe(
+    this.sExperiencia.update(id, this.experiencia).subscribe(
       (data) => {
         this.router.navigate(['']);
       },

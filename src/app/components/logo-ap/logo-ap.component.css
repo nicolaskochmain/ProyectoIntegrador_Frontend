@@ -1,5 +1,14 @@
+.navbar {
+  transition: 0.3s;
+}
+
+.navbar:hover {
+  background: #8294c4;
+}
+
 .row {
   width: 100%;
+  height: 100px;
 }
 
 img {

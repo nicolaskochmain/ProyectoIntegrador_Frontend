@@ -1,26 +1,30 @@
-<div class="row">
+<nav class="navbar fixed-top">
   <div
-    class="container d-flex flex-column flex-md-row justify-content-between align-items-center"
+    class="hover container-fluid d-sm-flex justify-content-center justify-content-md-between"
   >
-    <div class="logo">
-      <img id="logoAP" src="../../../assets/APLogo.png" alt="" />
-    </div>
-    <div class="redes flex-column flex-md-row align-items-center">
-      <div>
-        <a href=""><img src="../../../assets/facebook.png" alt="" /></a>
-        <a href=""><img src="../../../assets/instagram.png" alt="" /></a>
-        <a href=""><img src="../../../assets/twitter.png" alt="" /></a>
-        <a href=""><img src="../../../assets/linkedin.png" alt="" /></a>
-        <a href=""><img src="../../../assets/github.png" alt="" /></a>
+    <a class="navbar-brand" href="https://argentinaprograma.inti.gob.ar/"
+      ><img id="logoAP" src="../../../assets/APLogo.png" alt=""
+    /></a>
+    <div class="redes">
+      <div class="">
+        <a href="https://www.instagram.com/ace.nicolas.koch/" class=""
+          ><img src="../../../assets/instagram.png" alt=""
+        /></a>
+        <a href="https://www.linkedin.com/in/nicolas-koch-6b0372275/" class=""
+          ><img src="../../../assets/linkedin.png" alt=""
+        /></a>
+        <a href="https://github.com/nicolaskochmain" class="" target="_blank"
+          ><img src="../../../assets/github.png" alt=""
+        /></a>
         <button
-          class="btn btn-outline-light"
+          class="btn btn-outline-light mx-2"
           (click)="login()"
           *ngIf="!isLogged"
         >
           Ingreso
         </button>
         <button
-          class="btn btn-outline-light"
+          class="btn btn-outline-light mx-2"
           (click)="onLogOut()"
           *ngIf="isLogged"
         >
@@ -29,4 +33,4 @@
       </div>
     </div>
   </div>
-</div>
+</nav>

@@ -1,27 +1,61 @@
-<div>
-  <button
-    type="button"
-    class="btn btn-primary"
-    routerLink="/editacercade/1"
-    *ngIf="isLogged"
-  >
-    Editar persona
-  </button>
+<div class="row">
+  <div class="col d-flex p-0">
+    <img
+      id="banner"
+      *ngIf="persona.banner; else elseBanner"
+      src="{{ persona.banner }}"
+      alt=""
+      class="img-fluid shadow p-0"
+    />
+    <ng-template #elseBanner
+      ><img
+        id="banner"
+        class="img-fluid shadow p-0"
+        src="../../../assets/banner-ok-argentina-programa.jpg"
+        alt=""
+    /></ng-template>
+  </div>
 </div>
 <div class="row">
-  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-    <img id="foto-perfil" src="{{ persona.img }}" class="img-fluid" alt="" />
+  <div class="col-sm-3 col-xl-2 text-center px-0">
+    <img
+      id="foto-perfil"
+      *ngIf="persona.img; else elseImg"
+      class="shadow"
+      src="{{ persona.img }}"
+      alt=""
+    />
+    <ng-template #elseImg
+      ><img
+        id="foto-perfil"
+        class="shadow"
+        src="../../../assets/foto-perfil.jpeg"
+        alt=""
+    /></ng-template>
+
+    <div id="nombre">
+      <h4 class="m-0">{{ persona.nombre }} {{ persona.apellido }}</h4>
+      <p class="m-0">Full Stack Web Developer Jr.</p>
+    </div>
   </div>
-  <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-    <h4 id="nombre">{{ persona.apellido }} {{ persona.apellido }}</h4>
-    <p>Full Stack Web Developer Jr.</p>
-  </div>
-  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 descripcion">
-    <span>
-      <h2>Acerca de mi</h2>
-      <p>
+  <div class="col d-flex flex-column justify-content-start pt-1">
+    <div>
+      <h2 id="acerca-de-mi">Acerca de mi</h2>
+      <p class="">
         {{ persona.descripcion }}
       </p>
-    </span>
+    </div>
+    <div>
+      <button
+        id="button"
+        type="button"
+        class="btn btn-primary mb-2"
+        routerLink="/editacercade/1"
+        *ngIf="isLogged"
+      >
+        <i class="bi bi-pencil-fill p-1"></i>
+        Editar persona
+      </button>
+    </div>
   </div>
 </div>

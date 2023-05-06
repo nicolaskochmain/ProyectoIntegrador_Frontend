@@ -1,6 +1,6 @@
 <div class="row">
-  <h1>Experiencia</h1>
-  <div class="col-lg-2">
+  <div class="p-0 col-lg-12">
+    <h1>Experiencia</h1>
     <button
       type="button"
       class="btn btn-dark"
@@ -10,11 +10,10 @@
       Agregar Experiencia
     </button>
   </div>
-  <div class="col-lg-1"></div>
-  <div class="col-lg-11">
+  <div class="col-lg-12">
     <table class="table">
-      <tbody>
-        <tr *ngFor="let experiencia of expe">
+      <tbody *ngIf="experiencia[0]; else elseBlock">
+        <tr *ngFor="let experiencia of experiencia">
           <td>
             <h3>{{ experiencia.nombreE }}</h3>
           </td>
@@ -28,13 +27,16 @@
               EDITAR
             </button>
           </td>
-          <td>
+          <td *ngIf="isLogged">
             <button class="btn btn-danger" (click)="delete(experiencia.id)">
               <i class="bi bi-trash-fill"></i> BORRAR
             </button>
           </td>
         </tr>
       </tbody>
+      <ng-template #elseBlock
+        ><h2>No hay experiencias actualmente, agrega una!</h2></ng-template
+      >
     </table>
   </div>
 </div>

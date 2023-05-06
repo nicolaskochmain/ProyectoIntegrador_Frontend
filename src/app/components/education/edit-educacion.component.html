@@ -1,31 +1,60 @@
-<div class="container" *ngIf="educacion">
-  <div class="row">
-    <div>
-      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-        <div class="form-group">
-          <label for="nombreE">Nombre de la institucion</label>
-          <input
-            type="text"
-            id="nombreE"
-            class="form-control"
-            name="nombreE"
-            [(ngModel)]="educacion.nombreE"
-            required
-          />
+<section class="gradient-custom" *ngIf="educacion">
+  <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+    <div class="container py-2 vh-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem">
+            <div class="card-body p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <h2 class="fw-bold mb-2 text-uppercase">Editar educacion</h2>
+                <p class="text-white-50 mb-5">
+                  Por favor completa todos los campos!
+                </p>
+
+                <div class="form-outline form-white row mb-4">
+                  <div class="col">
+                    <input
+                      type="text"
+                      id="nombreE"
+                      class="form-control form-control-lg"
+                      name="nombreE"
+                      [(ngModel)]="educacion.nombreE"
+                      required
+                    />
+                    <label class="form-label" for="nombreE"
+                      >Nombre de la institucion</label
+                    >
+                  </div>
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                  <textarea
+                    name="descripcionE"
+                    class="form-control form-control-lg"
+                    id="descripcionE"
+                    rows="10"
+                    name="descripcionE"
+                    [(ngModel)]="educacion.descripcionE"
+                    required
+                  ></textarea>
+                  <label class="form-label" for="descripcionE"
+                    >Descripcion de la tarea</label
+                  >
+                </div>
+                <button class="btn btn-outline-light btn-lg px-5" type="submit">
+                  Editar educacion
+                </button>
+              </div>
+              <div>
+                <p class="mb-0">
+                  Volver a
+                  <a routerLink="" class="text-white-50 fw-bold">Home</a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="nombreE">Descripcion de sus estudios</label>
-          <input
-            type="text"
-            id="descripcionE"
-            class="form-control"
-            name="descripcionE"
-            [(ngModel)]="educacion.descripcionE"
-            required
-          />
-        </div>
-        <button class="btn btn-primary">Editar educacion</button>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
+  </form>
+</section>

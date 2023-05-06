@@ -1,38 +1,160 @@
 <div class="row">
-  <h1>Hard & Soft Skills</h1>
-  <div class="col-lg-2">
+  <div class="">
+    <h1>Hard & Soft Skills</h1>
     <button
       type="button"
       routerLink="/nuevahys"
       class="btn btn-dark"
       *ngIf="isLogged"
     >
-      Nueva Skill
+      Agregar Skill
     </button>
   </div>
-  <div
-    class="d-flex flex-column align-items-center text-center col-sm-4 colmd-4 col-lg-4"
-    *ngFor="let hys of hys"
-  >
+  <div class="row">
     <circle-progress
-      [percent]="hys.porcentaje"
-      [radius]="100"
-      [imageSrc]="''"
-      [title]="hys.nombre"
-      [showTitle]="true"
-      [showImage]="false"
-      [imageHeight]="80"
-      [imageWidth]="80"
-      [showUnits]="false"
-      [showSubtitle]="false"
-      [outerStrokeWidth]="16"
-      [innerStrokeWidth]="8"
-      [outerStrokeColor]="'#78C000'"
-      [innerStrokeColor]="'#C7E596'"
+      class="col"
+      [percent]="85"
+      [radius]="50"
+      [outerStrokeWidth]="6"
+      [innerStrokeWidth]="3"
+      [imageSrc]="'https://cdn-icons-png.flaticon.com/512/174/174854.png'"
+      [showImage]="true"
+      [imageHeight]="50"
+      [imageWidth]="50"
+      [outerStrokeColor]="'#c93a08'"
+      [innerStrokeColor]="'#fc490b'"
       [animation]="true"
-      [animationDuration]="300"
+      [animationDuration]="500"
     ></circle-progress>
-    <div class="">
+    <circle-progress
+      class="col"
+      [percent]="85"
+      [radius]="50"
+      [imageSrc]="
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/800px-CSS3_logo.svg.png'
+      "
+      [showImage]="true"
+      [imageHeight]="50"
+      [imageWidth]="50"
+      [outerStrokeColor]="'#214ce5'"
+      [innerStrokeColor]="'#153298'"
+      [animation]="true"
+      [animationDuration]="500"
+    ></circle-progress>
+    <circle-progress
+      class="col"
+      [percent]="85"
+      [radius]="50"
+      [imageSrc]="
+        'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png'
+      "
+      [showImage]="true"
+      [imageHeight]="50"
+      [imageWidth]="50"
+      [outerStrokeColor]="'#f0db4f'"
+      [innerStrokeColor]="'#f0db4f'"
+      [animation]="true"
+      [animationDuration]="500"
+    ></circle-progress>
+    <circle-progress
+      class="col"
+      [percent]="85"
+      [radius]="50"
+      [imageSrc]="
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/2048px-Angular_full_color_logo.svg.png'
+      "
+      [showImage]="true"
+      [imageHeight]="75"
+      [imageWidth]="75"
+      [outerStrokeColor]="'#ab0022'"
+      [innerStrokeColor]="'#de002d'"
+      [animation]="true"
+      [animationDuration]="500"
+    ></circle-progress>
+    <circle-progress
+      class="col"
+      [percent]="85"
+      [radius]="50"
+      [imageSrc]="'https://cdn-icons-png.flaticon.com/512/226/226777.png'"
+      [showImage]="true"
+      [imageHeight]="50"
+      [imageWidth]="50"
+      [outerStrokeColor]="'#cf563f'"
+      [innerStrokeColor]="'#da3910'"
+      [animation]="true"
+      [animationDuration]="500"
+    ></circle-progress>
+    <circle-progress
+      class="col"
+      [percent]="85"
+      [radius]="50"
+      [imageSrc]="
+        'https://seeklogo.com/images/S/spring-logo-9A2BC78AAF-seeklogo.com.png'
+      "
+      [showImage]="true"
+      [imageHeight]="50"
+      [imageWidth]="50"
+      [outerStrokeColor]="'#568916'"
+      [innerStrokeColor]="'#77bc1f'"
+      [animation]="true"
+      [animationDuration]="500"
+    ></circle-progress>
+
+    <circle-progress
+      class="col"
+      [percent]="85"
+      [radius]="50"
+      [imageSrc]="'https://cdn-icons-png.flaticon.com/512/5968/5968313.png'"
+      [showImage]="true"
+      [imageHeight]="50"
+      [imageWidth]="50"
+      [outerStrokeColor]="'#306277'"
+      [innerStrokeColor]="'#01758f'"
+      [animation]="true"
+      [animationDuration]="500"
+    ></circle-progress>
+    <circle-progress
+      class="col"
+      [percent]="85"
+      [radius]="50"
+      [imageSrc]="
+        'https://upload.wikimedia.org/wikipedia/commons/4/46/English_icon_%28The_Noun_Project%29.png'
+      "
+      [showImage]="true"
+      [imageHeight]="75"
+      [imageWidth]="75"
+      [outerStrokeColor]="'#000000'"
+      [innerStrokeColor]="'#4c4c4c'"
+      [animation]="true"
+      [animationDuration]="500"
+    ></circle-progress>
+    <circle-progress
+      class="col"
+      [percent]="85"
+      [radius]="50"
+      [imageSrc]="
+        'https://upload.wikimedia.org/wikipedia/commons/d/da/Teamwork_icon_from_Noun_Project.png'
+      "
+      [showImage]="true"
+      [imageHeight]="75"
+      [imageWidth]="75"
+      [outerStrokeColor]="'#356082'"
+      [innerStrokeColor]="'#0f4b6f'"
+      [animation]="true"
+      [animationDuration]="500"
+    ></circle-progress>
+    <div class="col" *ngFor="let hys of hys">
+      <circle-progress
+        [percent]="hys.porcentaje"
+        [radius]="50"
+        [showUnits]="false"
+        [showSubtitle]="false"
+        [title]="hys.nombre"
+        [outerStrokeColor]="'#78C000'"
+        [innerStrokeColor]="'#C7E596'"
+        [animation]="true"
+        [animationDuration]="500"
+      ></circle-progress>
       <button
         class="btn btn-light"
         routerLink="/edithys/{{ hys.id }}"

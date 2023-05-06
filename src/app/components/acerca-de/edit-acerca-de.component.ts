@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona.model';
+import { BannerService } from 'src/app/services/banner.service';
 import { ImageService } from 'src/app/services/image.service';
 import { PersonaService } from 'src/app/services/persona.service';
 
@@ -16,7 +17,8 @@ export class EditAcercaDeComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private personaService: PersonaService,
     private router: Router,
-    public imageService: ImageService
+    public imageService: ImageService,
+    public bannerService: BannerService
   ) {}
 
   ngOnInit(): void {
@@ -25,7 +27,7 @@ export class EditAcercaDeComponent implements OnInit {
     this.personaService.detail(id).subscribe(
       (data) => (this.persona = data),
       (err) => {
-        alert('Error al modificar persona');
+        console.log('Error al modificar persona');
         this.router.navigate(['']);
       }
     );
@@ -34,6 +36,7 @@ export class EditAcercaDeComponent implements OnInit {
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.persona.img = this.imageService.url;
+    this.persona.banner = this.bannerService.url;
     this.personaService.update(id, this.persona).subscribe(
       (data) => this.router.navigate(['']),
       (err) => {
@@ -45,7 +48,13 @@ export class EditAcercaDeComponent implements OnInit {
 
   uploadImage($event: any) {
     const id = this.activatedRoute.snapshot.params['id'];
-    const name = 'perfil_' + id;
+    const name = `perfil_${id}`;
     this.imageService.uploadImage($event, name);
+  }
+
+  uploadBanner($event: any) {
+    const id = this.activatedRoute.snapshot.params['id'];
+    const name = `banner_${id}`;
+    this.bannerService.uploadBanner($event, name);
   }
 }

@@ -3,10 +3,17 @@
 }
 
 div {
-  background-color: #a1b5cb;
+  background-color: #acb1d6;
 }
 
-h1,
-h3 {
-  display: inline;
+tr {
+  border: 0;
+}
+
+@media (max-width: 576px) {
+  td {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+  }
 }

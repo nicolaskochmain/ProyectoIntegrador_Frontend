@@ -1,58 +1,57 @@
-.row {
-  padding: 20px;
+div {
+  background-color: #8294c4;
 }
 
-div {
-  background-color: #a1b5cb;
-  text-align: center;
+#foto-perfil {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 3px grey;
+  position: relative;
+  bottom: 75px;
 }
 
 #nombre {
-  margin-top: 15px;
+  position: relative;
+  bottom: 50px;
 }
 
-@media (min-width: 576px) {
-  #foto-perfil {
-    border-radius: 100%;
-    box-shadow: 3px 3px 3px grey;
+#banner {
+  max-height: 650px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  #banner {
+    position: relative;
+    top: 150px;
   }
 
-  .descripcion {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  #foto-perfil {
+    bottom: 0;
+  }
+
+  #nombre {
+    bottom: 0;
+  }
+
+  #acerca-de-mi {
+    text-align: center;
   }
 }
 
 @media (min-width: 769px) {
   #foto-perfil {
-    position: absolute;
-    width: 15%;
-    border-radius: 100%;
     box-shadow: 3px 3px 3px grey;
-    left: 3%;
-    top: 700px;
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1200px) {
   #foto-perfil {
-    position: absolute;
-    width: 10%;
-    border-radius: 100%;
+    width: 200px;
+    height: 200px;
     box-shadow: 3px 3px 3px grey;
-    left: 3%;
-    top: 600px;
-  }
-}
-
-@media (max-width: 576px) {
-  #foto-perfil {
-    position: absolute;
-    width: 30%;
-    border-radius: 100%;
-    box-shadow: 3px 3px 3px grey;
-    left: 35%;
-    top: 550px;
   }
 }

@@ -9,7 +9,7 @@ import { TokenService } from 'src/app/services/token.service';
   styleUrls: ['./experience.component.css'],
 })
 export class ExperienceComponent implements OnInit {
-  expe: Experiencia[] = [];
+  experiencia: Experiencia[] = [];
 
   constructor(
     private sExperiencia: ExperienciaService,
@@ -24,7 +24,7 @@ export class ExperienceComponent implements OnInit {
   }
 
   cargarExperiencia(): void {
-    this.sExperiencia.lista().subscribe((data) => (this.expe = data));
+    this.sExperiencia.lista().subscribe((data) => (this.experiencia = data));
   }
 
   delete(id?: number) {

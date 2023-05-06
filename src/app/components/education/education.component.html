@@ -1,6 +1,6 @@
 <div class="row">
-  <h1>Educacion</h1>
-  <div class="col-lg-2">
+  <div class="p-0 col-lg-12">
+    <h1>Educacion</h1>
     <button
       type="button"
       class="btn btn-dark"
@@ -10,31 +10,33 @@
       Agregar Educacion
     </button>
   </div>
-  <div class="col-lg-1"></div>
-  <div class="col-lg-11">
+  <div class="col-lg-12">
     <table class="table">
-      <tbody>
-        <tr *ngFor="let Educacion of educacion">
+      <tbody *ngIf="educacion[0]; else elseBlock">
+        <tr *ngFor="let educacion of educacion">
           <td>
-            <h3>{{ Educacion.nombreE }}</h3>
+            <h3>{{ educacion.nombreE }}</h3>
           </td>
-          <td>{{ Educacion.descripcionE }}</td>
+          <td>{{ educacion.descripcionE }}</td>
           <td *ngIf="isLogged">
             <button
               class="btn btn-light"
-              routerLink="/editedu/{{ Educacion.id }}"
+              routerLink="/editedu/{{ educacion.id }}"
             >
               <i class="bi bi-pencil-fill"></i>
               EDITAR
             </button>
           </td>
-          <td>
-            <button class="btn btn-danger" (click)="delete(Educacion.id)">
+          <td *ngIf="isLogged">
+            <button class="btn btn-danger" (click)="delete(educacion.id)">
               <i class="bi bi-trash-fill"></i> BORRAR
             </button>
           </td>
         </tr>
       </tbody>
+      <ng-template #elseBlock
+        ><h2>No hay educaciones actualmente, agrega una!</h2></ng-template
+      >
     </table>
   </div>
 </div>
