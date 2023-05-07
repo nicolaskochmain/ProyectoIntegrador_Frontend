@@ -1,3 +1,7 @@
+##Proyecto Integrador Argentina Programa (Frontend)
+
+Esta es la seccion "front-end" del proyecto integrador que he creado utilizando el framework Angular. Se trata de un portfolio personal que presenta mi trabajo, educacion, experiencia y habilidades en el campo de la programación. Este proyecto se generó con Angular CLI versión 15.1.4.
+
 #ProyectoIntegradorNicolasWalterKoch
 
 Este proyecto se generó con [Angular CLI](https://github.com/angular/angular-cli) versión 15.1.4.
