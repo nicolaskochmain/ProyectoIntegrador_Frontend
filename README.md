@@ -47,5 +47,7 @@ Este proyecto está bajo la licencia MIT. Puedes utilizarlo, modificarlo y distr
 
 
 ## Más ayuda
-
 Para obtener más ayuda sobre Angular CLI, use `ng help` o consulte la página [Descripción general y referencia de comandos de Angular CLI] (https://angular.io/cli).
+
+## Contacto
+Si tienes preguntas o comentarios sobre la aplicación, por favor contáctame a través de mi correo electrónico: nicolaskoch777@gmail.com.
